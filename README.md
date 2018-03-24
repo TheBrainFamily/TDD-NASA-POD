@@ -1,4 +1,4 @@
-Starter to a TheBrain Software House / Codecamps training: "The gentle introduction to realistic Test Driven Development"
+Starter to TheBrain Software House / Codecamps training: "Gentle introduction to realistic Test Driven Development"
 
 Please clone this repo and run npm install.
 
