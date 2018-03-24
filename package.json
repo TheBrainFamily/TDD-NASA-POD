@@ -5,7 +5,9 @@
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "^2.0.0-next.b2fd8db8"
+    "react-redux": "^5.0.7",
+    "react-scripts": "^2.0.0-next.b2fd8db8",
+    "redux": "^3.7.2"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -31,6 +33,9 @@
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.7.0",
-    "prettier": "^1.11.1"
+    "mockdate": "^2.0.2",
+    "prettier": "^1.11.1",
+    "react-testing-library": "^1.6.0",
+    "wait-for-expect": "0.0.4"
   }
 }
