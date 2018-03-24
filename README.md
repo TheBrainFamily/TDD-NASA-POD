@@ -1,4 +1,8 @@
-Starter to TheBrain Software House / Codecamps training: "Gentle introduction to realistic Test Driven Development"
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![CircleCI](https://circleci.com/gh/TheBrainFamily/TDD-NASA-POD.svg?style=shield)](https://circleci.com/gh/TheBrainFamily/TDD-NASA-POD)
+
+Starter to TheBrain Software House / Codecamps training: 
+# "Gentle introduction to realistic Test Driven Development"
 
 Please clone this repo and run npm install.
 
