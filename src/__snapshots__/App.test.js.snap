@@ -1,5 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Picture renders correctly 1`] = `
+<div
+  data-testid="picture"
+>
+  <div
+    data-testid="title"
+  >
+    title
+  </div>
+  <div
+    data-testid="description"
+  >
+    explanation
+  </div>
+  <img
+    data-testid="link"
+    src="url"
+  />
+</div>
+`;
+
 exports[`header renders correctly 1`] = `
 <div
   data-testid="header"

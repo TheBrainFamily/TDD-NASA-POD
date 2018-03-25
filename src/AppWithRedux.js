@@ -1,6 +1,9 @@
 /* eslint-disable class-methods-use-this */
 import React, { Component } from "react";
+import { connect, Provider } from "react-redux";
+import "./App.css";
 import Picture from "./Picture";
+import { returnStore, setDate } from "./redux";
 import { formatDate } from "./helper/formatDate";
 
 const DIRECTION = {
@@ -9,9 +12,6 @@ const DIRECTION = {
 };
 
 class App extends Component {
-  state = {
-    date: new Date()
-  };
   onDecreaseWithDirection = direction => {
     const millisecondsInSecond = 1000;
     const secondsInMinute = 60;
@@ -19,14 +19,14 @@ class App extends Component {
     const hourInDay = 24;
 
     const newDate = new Date(
-      new Date(this.state.date).getTime() +
+      new Date(this.props.date).getTime() +
         hourInDay *
           minutesInHour *
           secondsInMinute *
           millisecondsInSecond *
           direction
     );
-    this.setState({ date: newDate });
+    this.props.onDateChange(newDate);
   };
   onDecreaseDate = () => {
     this.onDecreaseWithDirection(DIRECTION.BACK);
@@ -42,14 +42,31 @@ class App extends Component {
           <button data-testid="move-back" onClick={this.onDecreaseDate}>
             move back
           </button>
-          <div data-testid="date">{formatDate(this.state.date)}</div>
+          <div data-testid="date">{this.props.date}</div>
           <button data-testid="move-forward" onClick={this.onIncreaseDate}>
             move forward
           </button>
         </div>
-        <Picture date={formatDate(this.state.date)} />
+        <Picture date={this.props.date} />
       </React.Fragment>
     );
   }
 }
-export default App;
+const mapStateToProps = state => ({
+  date: formatDate(state.date)
+});
+
+const mapDispatchToProps = dispatch => ({
+  onDateChange: date => {
+    dispatch(setDate(date));
+  }
+});
+const AppConnected = connect(mapStateToProps, mapDispatchToProps)(App);
+
+const AppWithRedux = () => (
+  <Provider store={returnStore()}>
+    <AppConnected />
+  </Provider>
+);
+
+export default AppWithRedux;

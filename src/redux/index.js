@@ -1,14 +1,7 @@
+// Disclaimer: This is NOT a great example of setting up redux.
 import { createStore } from "redux";
 
 const SET_DATE = "SET_DATE";
-
-const formatDate = date => {
-  const year = date.getFullYear();
-  const month =
-    date.getMonth() < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1;
-  const day = date.getDate() < 10 ? `0${date.getDate()}` : date.getDate();
-  return `${year}-${month}-${day}`;
-};
 
 export function setDate(date) {
   return {
@@ -19,12 +12,12 @@ export function setDate(date) {
 
 function returnStore() {
   const initialState = {
-    date: formatDate(new Date())
+    date: new Date()
   };
   function reducer(state = initialState, action) {
     switch (action.type) {
       case SET_DATE:
-        return Object.assign({}, state, { date: formatDate(action.date) });
+        return { ...state, ...{ date: action.date } };
       default:
         return state;
     }
