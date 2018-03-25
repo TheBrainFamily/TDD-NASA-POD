@@ -2,8 +2,8 @@
 import React from "react";
 import { render } from "react-testing-library";
 import waitForExpect from "wait-for-expect";
-import { CONTRACT_TEST_DATE } from "./testHelpers/constants";
-import Picture from "./Picture";
+import { CONTRACT_TEST_DATE } from "../__testHelpers/constants";
+import Picture from "../Picture";
 
 // We are going lower level here because this test is slow - we want to run it ONLY when Picture component changes,
 // which should be much less often than the rest of the application.

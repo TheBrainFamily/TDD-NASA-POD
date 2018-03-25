@@ -1,4 +1,5 @@
 /* eslint-disable class-methods-use-this */
+import PropTypes from "prop-types";
 import React, { Component } from "react";
 import { connect, Provider } from "react-redux";
 import "./App.css";
@@ -12,6 +13,11 @@ const DIRECTION = {
 };
 
 class App extends Component {
+  static propTypes = {
+    date: PropTypes.string,
+    onDateChange: PropTypes.func
+  };
+
   onDecreaseWithDirection = direction => {
     const millisecondsInSecond = 1000;
     const secondsInMinute = 60;

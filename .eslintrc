@@ -5,7 +5,10 @@
     "browser": true
   },
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.js", "**/*.spec.js", "**/__testHelpers/*.js"]}]
+
   },
   "parser": "babel-eslint"
 }

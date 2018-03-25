@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Picture renders correctly 1`] = `
+<div
+  data-testid="picture"
+>
+  <div
+    data-testid="title"
+  >
+    title
+  </div>
+  <div
+    data-testid="description"
+  >
+    explanation
+  </div>
+  <img
+    data-testid="link"
+    src="url"
+  />
+</div>
+`;
+
+exports[`header renders correctly 1`] = `
+<div
+  data-testid="header"
+>
+  <h1>
+    NASA picture of the day
+  </h1>
+  <button
+    data-testid="move-back"
+  >
+    move back
+  </button>
+  <div
+    data-testid="date"
+  >
+    2018-03-24
+  </div>
+  <button
+    data-testid="move-forward"
+  >
+    move forward
+  </button>
+</div>
+`;

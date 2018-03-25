@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import fetch from "isomorphic-fetch";
@@ -18,6 +19,9 @@ const fetchNasaPicture = date =>
     .then(data => data);
 
 export default class Picture extends React.Component {
+  static propTypes = {
+    date: PropTypes.string.isRequired
+  };
   state = {
     loading: true
   };
